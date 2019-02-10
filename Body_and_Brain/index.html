@@ -1,74 +1,718 @@
 <link rel="stylesheet" href="base.css" />
 <style>
     .sheet-logo {
-        background:url(https://raw.githubusercontent.com/gatewayprogrammingschool/roll20-character-sheets/Body_and_Brain/bab_logo.png);
+        margin-left: 0px;
+        background:url(https://raw.githubusercontent.com/gatewayprogrammingschool/roll20-character-sheets/Body_and_Brain/Body_and_Brain/bab_logo.png);
+        background-repeat: no-repeat;
+        padding-left: 164px;
+    }
+
+    .sheet-header-row {
+        width: 600px;
+    }
+
+    .sheet-header {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .sheet-header-font {
+        font-family: 'Shadows Into Light';
+        font-size: large;
+    }
+
+    .sheet-width {
+        min-width: 768px;
+        max-width: 900px;
+    }
+
+    .sheet-column-3 {
+        width: 144.5px;
+        margin-right: 0px;
+        display: inline-block;
+    }
+
+    .sheet-column-2 {
+        width: 115px;
+        margin-right: 0px;
+        display: inline-block;
+    }
+
+    .sheet-fieldset {
+        margin: 0;
+        margin-top: 0;
+    }
+
+    .sheet-text-box-3 {
+        width: 135px;
+        margin-right: 0px;
+        padding-top: 2px;
+        padding-right: 3px;
+        padding-left: 4px;
+        padding-bottom: 1px;
+        font-size: medium;
+    }
+
+    .sheet-text-box-2 {
+        width: 106px;
+        margin-right: 0px;
+        padding-top: 2px;
+        padding-right: 3px;
+        padding-left: 4px;
+        padding-bottom: 1px;
+        font-size: medium;
+    }
+
+    .sheet-select-box-3 {
+        width: 144px;
+        height: 39px;
+        font-size: medium;
+        margin: 0;
+    }
+    .sheet-select-box-2 {
+        width: 115px;
+        height: 39px;
+        font-size: medium;
+        margin: 0px;
+    }
+
+    .sheet-stats-row {
+        width: 760px;
+        padding: 2;
+        margin: 2;
+        position: relative;
+    }
+
+    .sheet-stats-border-top-left {
+        border-top: 1px black solid;        
+        border-left: 1px black solid;
+    }
+
+    .sheet-stats-border-bottom-right {
+        border-right: 1px black solid;
+        border-bottom: 1px black solid;
+        margin: 0;
+        padding: 0;        
+    }
+
+    .sheet-stats-body-column {
+        min-width: 295px;
+        max-width: 295px;
+        padding-left: 75px;
+        background: url(https://raw.githubusercontent.com/gatewayprogrammingschool/roll20-character-sheets/Body_and_Brain/Body_and_Brain/body.png);
+        background-repeat:  no-repeat;
+        display: inline-block;
+        box-sizing: initial;
+    }
+
+    .sheet-stats-brain-column {
+        min-width: 295px;
+        max-width: 295px;
+        padding-left: 75px;
+        background: url(https://raw.githubusercontent.com/gatewayprogrammingschool/roll20-character-sheets/Body_and_Brain/Body_and_Brain/brain.png);
+        background-repeat:  no-repeat;
+        display: inline-block;
+        box-sizing: initial;
+    }
+
+    .sheet-column-header {
+        background: silver;
+        border-bottom: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sheet-stats-column {
+        display: inline-grid;
+        margin: 0;
+        padding: 0;
+        height: 83px;
+        align-self: flex-start;
+        position: relative;
+        bottom: 0;
+        text-align: center;
+    }
+
+    .sheet-stats-column-padding {
+        padding-left: 4px;
+        padding-top: 4px;
+        padding-right: 4px;
+        padding-bottom: 2px;
+    }
+
+    .sheet-stats-column-body {
+        bottom: 0px;
+        font-size: Large;
+        vertical-align: middle;
+    }
+
+    .sheet-stats-column-header {
+        bottom: 0px;
+        font-size: Normal;
+        height: 35px;
+        text-align: center;
+    }
+
+    .sheet-stats-roll-column {
+        width: 30.5px;
+        height: 83px;
+        font-size: x-small;
+        font-family: "Shadows Into Light";
+        margin: 0;
+        padding: 0;
+        position: relative;
+        bottom: 0;
+    }
+
+    .sheet-stats-image-column {
+        width: 27px;
+        height: 83px;
+        font-size: x-small;
+        font-family: "Shadows Into Light";
+        margin: 0;
+        margin-top: -2px;
+        padding-right: 2;
+    }
+
+    .sheet-stats-stat-column {
+        width: 46.5px;
+        font-size: Normal;
+        font-family: "Shadows Into Light";
+        font-weight: bolder;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        bottom: 0;
+    }
+
+    .sheet-stats-stat-cell {
+        position: relative;
+        bottom: 0;
+    }
+
+    .sheet-stats-stat-row {
+        padding: 0;
+        margin: -1px;
+        width: 100%;
+        display: inline-flex;
     }
 </style>
-<div class="12rowcol row sheet-logo" style="background:url(https://raw.githubusercontent.com/gatewayprogrammingschool/roll20-character-sheets/Body_and_Brain/bab_logo.png);">
-    <div class="col-md-pull-12 row" style="margin-left: 172;">
-        <div class="col-md-2">Player</div>
-        <div class="col-md-2">Character</div>
-        <div class="col-md-2">Race</div>
-        <div class="col-md-2">Experience</div>
-    </div>
-    <div class="col-md-pull-12 row" style="margin-left: 172;">
-        <div class="col-md-2"><input type="text" name="attr_player_name" /></div>
-        <div class="col-md-2"><input type="text" name="attr_character_name" /></div>
-        <div class="col-md-2">
-            <fieldset class="repeating_race sheet-fieldset">
-                <select name="attr_race" class="race">
-                    <option value="Human">Human</option>
-                    <option value="Half-Elf">Half-Elf</option>
-                    <option value="Elf">Elf</option>
-                    <option value="Dwarf">Dwarf</option>
-                    <option value="Halfling">Halfling</option>
-                    <option value="Feline">Feline</option>
-                    <option value="Reptilian">Reptilian</option>
-                    <option value="Orc">Orc</option>
-                </select></fieldset>
+<div class="sheet-width">
+    <div class="sheet-logo">
+        <div class="sheet-header-row">
+            <div class="sheet-column-3">
+                <div class="sheet-header-font">Player</div>
+                <div class=""><input type="text" class="form-control sheet-text-box-3" name="attr_player_name" /></div>
+            </div>
+            <div class="sheet-column-3">
+                <div class="sheet-header-font">Character</div>
+                <div class=""><input type="text" class="form-control sheet-text-box-3" name="attr_character_name" /></div>
+            </div>
+            <div class="sheet-column-3">
+                <div class="sheet-header-font">Race</div>
+                <div class="">
+                    <fieldset class="repeating_race">
+                        <select name="attr_race" class="race form-control sheet-select-box-3">
+                            <option value="Human">Human</option>
+                            <option value="Half-Elf">Half-Elf</option>
+                            <option value="Elf">Elf</option>
+                            <option value="Dwarf">Dwarf</option>
+                            <option value="Halfling">Halfling</option>
+                            <option value="Feline">Feline</option>
+                            <option value="Reptilian">Reptilian</option>
+                            <option value="Orc">Orc</option>
+                        </select>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="sheet-column-3">
+                <div class="sheet-header-font">Experience</div>
+                <div class=""><input type="text" class="form-control sheet-text-box-3" name="attr_experience" /></div>
+            </div>
         </div>
-        <div class="col-md-2"><input type="text" name="attr_experience" /></div>
-    </div>
-    <div class="col-md-pull-12 row" style="margin-left: 172;">
-        <div class="col-md-2">Profession</div>
-        <div class="col-md-2">Apprenticeship</div>
-        <div class="col-md-2">Max Hit Points</div>
-        <div class="col-md-2">Current Hit Points</div>
-        <div class="col-md-2">Unused Skill Points</div>
-    </div>
-    <div class="col-md-pull-12 row" style="margin-left: 172;">
-        <div class="col-md-2">
-            <fieldset class="repeating_profession">
-                <select name="attr_profession" class="profession">
-                    <option value="Fighter">Fighter</option>
-                    <option value="Berserker">Berserker</option>
-                    <option value="Paladin">Paladin</option>
-                    <option value="Ranger">Ranger</option>
-                    <option value="Thief">Thief</option>
-                    <option value="Bard">Bard</option>
-                    <option value="Wizard">Wizard</option>
-                    <option value="Sorcerer">Sorcerer</option>
-                    <option value="Priest">Priest</option>
-                </select>
-            </fieldset>
+        <div class=" sheet-header-row">
+            <div class="sheet-column-2">
+                <div class="sheet-header-font">Profession</div>
+                <div class="">
+                    <fieldset class="repeating_profession">
+                        <select name="attr_profession" class="profession form-control sheet-select-box-2">
+                            <option value="Fighter">Fighter</option>
+                            <option value="Berserker">Berserker</option>
+                            <option value="Paladin">Paladin</option>
+                            <option value="Ranger">Ranger</option>
+                            <option value="Thief">Thief</option>
+                            <option value="Bard">Bard</option>
+                            <option value="Wizard">Wizard</option>
+                            <option value="Sorcerer">Sorcerer</option>
+                            <option value="Priest">Priest</option>
+                        </select>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="sheet-column-2">
+                <div class="sheet-header-font">Apprenticeship</div>
+                <div class="">
+                    <fieldset class="repeating_apprenticeship">
+                        <select name="attr_apprenticeship" class="apprenticeship form-control sheet-select-box-2">
+                            <option value="Fighter">Fighter</option>
+                            <option value="Berserker">Berserker</option>
+                            <option value="Paladin">Paladin</option>
+                            <option value="Ranger">Ranger</option>
+                            <option value="Thief">Thief</option>
+                            <option value="Bard">Bard</option>
+                            <option value="Wizard">Wizard</option>
+                            <option value="Sorcerer">Sorcerer</option>
+                            <option value="Priest">Priest</option>
+                        </select>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="sheet-column-2">
+                <div class="sheet-header-font">Max HP</div>
+                <div class=""><input type="text" class="form-control sheet-text-box-2" name="attr_max_hit_points" /></div>
+            </div>
+            <div class="sheet-column-2">
+                <div class="sheet-header-font">Current HP</div>
+                <div class=""><input type="text" class="form-control sheet-text-box-2" name="attr_current_hit_points" /></div>
+            </div>
+            <div class="sheet-column-2">
+                <div class="sheet-header-font">Unused SP</div>
+                <div class=""><input type="text" class="form-control sheet-text-box-2" name="attr_unused_skill_points" /></div>
+            </div>
         </div>
-        <div class="col-md-2">
-            <fieldset class="repeating_apprenticeship">
-                <select name="attr_apprenticeship" class="apprenticeship">
-                    <option value="Fighter">Fighter</option>
-                    <option value="Berserker">Berserker</option>
-                    <option value="Paladin">Paladin</option>
-                    <option value="Ranger">Ranger</option>
-                    <option value="Thief">Thief</option>
-                    <option value="Bard">Bard</option>
-                    <option value="Wizard">Wizard</option>
-                    <option value="Sorcerer">Sorcerer</option>
-                    <option value="Priest">Priest</option>
-                </select>
-            </fieldset>
-        </div>
-        <div class="col-md-2"><input type="text" name="attr_max_hit_points" /></div>
-        <div class="col-md-2"><input type="text" name="attr_current_hit_points" /></div>
-        <div class="col-md-2"><input type="text" name="attr_unused_skill_points" /></div>
+    </div>
+    <div>
+        <div class="sheet-stats-row">
+            <div class="sheet-stats-body-column">
+                <div class="sheet-stats-stat-row sheet-stats-border-top-left">
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-image-column sheet-stats-border-bottom-right">
+                            <img src="https://raw.githubusercontent.com/gatewayprogrammingschool/roll20-character-sheets/Body_and_Brain/Body_and_Brain/strength.png" />
+                        </div>
+                    </div>
+                    <div class="sheet-stats-roll-column">
+                        <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding sheet-column-header">
+                            Roll
+                        </div>
+                        <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding">
+                            <span name="attr_stat_strength_roll">98</span>
+                        </div>
+                        <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding sheet-column-header">
+                            Race
+                        </div>
+                        <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding">
+                            <span name="attr_stat_strength_race_bonus">2</span>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Stat
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_stat_strength">100</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Base
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_base_bonus_strength">25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Other
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_other_bonus_strength">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Stat Bonus
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_stat_bonus_strength">25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Skill Points
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_skill_points_strength">7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-stats-stat-row sheet-stats-border-top-left">
+                        <div class="sheet-stats-column">
+                                <div class="sheet-stats-image-column sheet-stats-border-bottom-right">
+                                    <img src="https://raw.githubusercontent.com/gatewayprogrammingschool/roll20-character-sheets/Body_and_Brain/Body_and_Brain/agility.png" />
+                                </div>
+                            </div>
+                            <div class="sheet-stats-roll-column">
+                        <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding sheet-column-header">
+                            Roll
+                        </div>
+                        <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding">
+                            <span name="attr_stat_agility_roll">99</span>
+                        </div>
+                        <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding sheet-column-header">
+                            Race
+                        </div>
+                        <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding">
+                            <span name="attr_stat_agility_race_bonus">1</span>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Stat
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_stat_agility">100</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Base
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_base_bonus_agility">25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Other
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_other_bonus_agility">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Stat Bonus
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_stat_bonus_agility">25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Skill Points
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_skill_points_agility">7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-stats-stat-row sheet-stats-border-top-left">
+                        <div class="sheet-stats-column">
+                                <div class="sheet-stats-image-column sheet-stats-border-bottom-right">
+                                    <img src="https://raw.githubusercontent.com/gatewayprogrammingschool/roll20-character-sheets/Body_and_Brain/Body_and_Brain/constitution.png" />
+                                </div>
+                            </div>
+                                <div class="sheet-stats-roll-column">
+                            <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding sheet-column-header">
+                                Roll
+                            </div>
+                            <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding">
+                                <span name="attr_stat_agility_roll">99</span>
+                            </div>
+                            <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding sheet-column-header">
+                                Race
+                            </div>
+                            <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding">
+                                <span name="attr_stat_agility_race_bonus">1</span>
+                            </div>
+                        </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Stat
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_stat_agility">100</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Base
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_base_bonus_agility">25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Other
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_other_bonus_agility">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Stat Bonus
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_stat_bonus_agility">25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-column">
+                        <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                            <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                Skill Points
+                            </div>
+                            <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                <span name="att_skill_points_agility">7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sheet-stats-brain-column">
+                    <div class="sheet-stats-stat-row sheet-stats-border-top-left">
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-image-column sheet-stats-border-bottom-right">
+                                <img src="https://raw.githubusercontent.com/gatewayprogrammingschool/roll20-character-sheets/Body_and_Brain/Body_and_Brain/strength.png" />
+                            </div>
+                        </div>
+                        <div class="sheet-stats-roll-column">
+                            <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding sheet-column-header">
+                                Roll
+                            </div>
+                            <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding">
+                                <span name="attr_stat_strength_roll">98</span>
+                            </div>
+                            <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding sheet-column-header">
+                                Race
+                            </div>
+                            <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding">
+                                <span name="attr_stat_strength_race_bonus">2</span>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Stat
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_stat_strength">100</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Base
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_base_bonus_strength">25</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Other
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_other_bonus_strength">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Stat Bonus
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_stat_bonus_strength">25</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Skill Points
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_skill_points_strength">7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-stat-row sheet-stats-border-top-left">
+                            <div class="sheet-stats-column">
+                                    <div class="sheet-stats-image-column sheet-stats-border-bottom-right">
+                                        <img src="https://raw.githubusercontent.com/gatewayprogrammingschool/roll20-character-sheets/Body_and_Brain/Body_and_Brain/agility.png" />
+                                    </div>
+                                </div>
+                                <div class="sheet-stats-roll-column">
+                            <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding sheet-column-header">
+                                Roll
+                            </div>
+                            <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding">
+                                <span name="attr_stat_agility_roll">99</span>
+                            </div>
+                            <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding sheet-column-header">
+                                Race
+                            </div>
+                            <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding">
+                                <span name="attr_stat_agility_race_bonus">1</span>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Stat
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_stat_agility">100</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Base
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_base_bonus_agility">25</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Other
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_other_bonus_agility">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Stat Bonus
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_stat_bonus_agility">25</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Skill Points
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_skill_points_agility">7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-stats-stat-row sheet-stats-border-top-left">
+                            <div class="sheet-stats-column">
+                                    <div class="sheet-stats-image-column sheet-stats-border-bottom-right">
+                                        <img src="https://raw.githubusercontent.com/gatewayprogrammingschool/roll20-character-sheets/Body_and_Brain/Body_and_Brain/constitution.png" />
+                                    </div>
+                                </div>
+                                    <div class="sheet-stats-roll-column">
+                                <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding sheet-column-header">
+                                    Roll
+                                </div>
+                                <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding">
+                                    <span name="attr_stat_agility_roll">99</span>
+                                </div>
+                                <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding sheet-column-header">
+                                    Race
+                                </div>
+                                <div class="sheet-stats-roll-cell sheet-stats-border-bottom-right sheet-stats-column-padding">
+                                    <span name="attr_stat_agility_race_bonus">1</span>
+                                </div>
+                            </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Stat
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_stat_agility">100</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Base
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_base_bonus_agility">25</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Other
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_other_bonus_agility">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Stat Bonus
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_stat_bonus_agility">25</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-stats-column">
+                            <div class="sheet-stats-stat-column sheet-stats-border-bottom-right">
+                                <div class="sheet-stats-column-padding sheet-column-header sheet-stats-column-header">
+                                    Skill Points
+                                </div>
+                                <div class="sheet-stats-column-padding sheet-stats-column-body sheet-stats-column-cell">
+                                    <span name="att_skill_points_agility">7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
 </div>
