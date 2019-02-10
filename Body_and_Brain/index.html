@@ -1,0 +1,79 @@
+<style>
+    .sheet-th {
+  text-align: left;
+}
+    .logo {
+        background:url(https://raw.githubusercontent.com/gatewayprogrammingschool/roll20-character-sheets/Body_and_Brain/Body_and_Brain/logo.png);
+    }
+</style>
+<table style="width: 100%;">
+  <tr>
+      <td class="sheet-logo" rowspan="4"></td>
+      <th class="sheet-th">Player</th>
+      <th class="sheet-th">Character</th>
+      <th class="sheet-th">Race</th>
+      <th class="sheet-th" colspan="2">Experience</th>
+  </tr>
+  <tr>
+      <td><input type="text" name="attr_player_name"/></td>
+      <td><input type="text" name="attr_character_name"/></td>
+      <td><select name="attr_race">
+          <option value="Human">Human</option>
+          <option value="Half-Elf">Half-Elf</option>
+          <option value="Elf">Elf</option>
+          <option value="Dwarf">Dwarf</option>
+          <option value="Halfling">Halfling</option>
+          <option value="Feline">Feline</option>
+          <option value="Reptilian">Reptilian</option>
+          <option value="Orc">Orc</option>
+      </select>
+      </td>
+      <td colspan="2"><input type="text" name="attr_experience"/></td>
+  </tr>
+  <tr>
+      <th>Profession</th>
+      <th>Apprenticeship</th>
+      <td colspan='2' rowspan='2'>
+        <table style="border: 0; padding: 0; width: 100%">
+            <tr>
+                <th class="sheet-th">Max Hit Points</th>
+                <th class="sheet-th">Current Hit Points</th>
+                <th class="sheet-th">Unused Skill Points</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="attr_max_hit_points"/></td>
+                <td><input type="text" name="attr_current_hit_points"/></td>
+                <td><input type="text" name="attr_unused_skill_points"/></td>
+            </tr>
+        </table>
+    </td>
+</tr>
+  <tr>
+    <td>
+        <select name="attr_profession">
+            <option value="Fighter">Fighter</option>
+            <option value="Berserker">Berserker</option>
+            <option value="Paladin">Paladin</option>
+            <option value="Ranger">Ranger</option>
+            <option value="Thief">Thief</option>
+            <option value="Bard">Bard</option>
+            <option value="Wizard">Wizard</option>
+            <option value="Sorcerer">Sorcerer</option>
+            <option value="Priest">Priest</option>
+        </select>
+    </td>
+    <td>
+        <select name="attr_apprenticeship">
+            <option value="Fighter">Fighter</option>
+            <option value="Berserker">Berserker</option>
+            <option value="Paladin">Paladin</option>
+            <option value="Ranger">Ranger</option>
+            <option value="Thief">Thief</option>
+            <option value="Bard">Bard</option>
+            <option value="Wizard">Wizard</option>
+            <option value="Sorcerer">Sorcerer</option>
+            <option value="Priest">Priest</option>
+        </select>
+    </td>
+</tr>
+</table>
